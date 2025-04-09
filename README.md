@@ -1,21 +1,8 @@
-# IterMVS (CVPR 2022)
-official source code of paper 'IterMVS: Iterative Probability Estimation for Efficient Multi-View Stereo'
+
 
 ## Introduction
 IterMVS is a novel learning-based MVS method combining highest efficiency and competitive reconstruction quality. We propose a novel GRU-based estimator that encodes pixel-wise probability distributions of depth in its hidden state. Ingesting multi-scale matching information, our model refines these distributions over multiple iterations and infers depth and confidence. Extensive experiments on DTU, Tanks & Temples and ETH3D show highest efficiency in both memory and run-time, and a better generalization ability than many state-of-the-art learning-based methods. 
 
-![](imgs/Teaser.jpg)
-
-If you find this project useful for your research, please cite: 
-
-```
-@misc{wang2021itermvs,
-      title={IterMVS: Iterative Probability Estimation for Efficient Multi-View Stereo}, 
-      author={Fangjinhua Wang and Silvano Galliani and Christoph Vogel and Marc Pollefeys},
-      journal={CVPR},
-      year={2022}
-}
-```
 
 ## Installation
 ### Requirements
@@ -90,7 +77,7 @@ The results look like:
 | 0.373     | 0.354      | 0.363        |
 
 
-### Evaluation on Tansk & Temples:
+### Evaluation on Tanks & Temples:
 * In ``eval_tanks.sh``, set `TANK_TESTING` as the root directory of the dataset and `--outdir` as the directory to store the reconstructed point clouds. 
 * `CKPT_FILE` is the path of checkpoint file (default as our pretrained model which is trained on DTU, the path is `checkpoints/dtu/model_000015.ckpt`). We also provide our pretrained model trained on BlendedMVS (`checkpoints/blendedmvs/model_000015.ckpt`)
 * Test on GPU by running `bash eval_tanks.sh`. The code includes depth map estimation and depth fusion. The outputs are the point clouds in `ply` format. 
